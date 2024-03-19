@@ -1,0 +1,15 @@
+
+<div>Current node:</div>
+@if (node) {
+  <pre><p>{{node | json}}</p></pre>
+} @else {
+  <div>No node</div>
+}
+<div>Current content:</div>
+@if (content) {
+  <pre><p>{{content | json}}</p></pre>
+} @else {
+  <div>No content</div>
+}
+
+

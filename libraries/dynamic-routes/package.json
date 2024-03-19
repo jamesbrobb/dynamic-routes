@@ -1,0 +1,18 @@
+{
+  "name": "@jamesbenrobb/dynamic-routes",
+  "version": "0.0.1",
+  "author": "James Robb",
+  "description": "Framework agnostic dynamic routing adaptor",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamesbrobb/dynamic-routes-app.git"
+  },
+  "peerDependencies": {
+    "@jamesbenrobb/types": "^1.0.3",
+    "rxjs": "~7.8.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

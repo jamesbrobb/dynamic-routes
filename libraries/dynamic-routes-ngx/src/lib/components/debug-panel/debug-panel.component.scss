@@ -1,0 +1,15 @@
+:host {
+  display: block;
+
+  pre {
+    background-color: var(--pre-background-color);
+    padding: 20px;
+    border-radius: 5px;
+    overflow-x: scroll;
+
+    p {
+      margin: 0;
+      font-size: 14px;
+    }
+  }
+}

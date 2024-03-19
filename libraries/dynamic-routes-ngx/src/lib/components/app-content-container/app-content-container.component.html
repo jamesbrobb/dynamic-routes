@@ -1,0 +1,13 @@
+
+@if (routesManager.currentRouteNodes$ | async; as routeNodes) {
+  @if (!routeNodes || routeNodes.length === 0) {
+
+    <div>
+      <h1>404</h1>
+      <p>Page not found</p>
+    </div>
+
+  }
+}
+
+<router-outlet></router-outlet>

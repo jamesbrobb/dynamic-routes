@@ -1,0 +1,15 @@
+@if (routeNodes && routeNodes.length > 0) {
+
+  <div class="explanation">
+    <p>This is the default placeholder content view.</p>
+    <p>You're seeing this for one of two reasons:</p>
+    <ul>
+      <li>1. You're just checking this out and haven't tried to add your own content yet.</li>
+      <li>2. You've tried adding your own content and failed abysmally.</li>
+      <li>C. I've messed something up.</li>
+    </ul>
+  </div>
+  <!--<mat-divider class="divider"></mat-divider>-->
+
+  <jbr-dra-debug-panel [nodes]="routeNodes" [node]="currentNode" [content]="currentContent"></jbr-dra-debug-panel>
+}

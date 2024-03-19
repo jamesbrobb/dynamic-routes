@@ -1,0 +1,12 @@
+@if (routeNodes$ | async; as routeNodes) {
+
+  @if (routeNodes.length > 0) {
+
+    <ng-container appContentLoader="{{contentComponentType}}"
+      [routeNodes]="routeNodes"
+      [currentNode]="routeNodes[routeNodes.length - 1]"
+      (routeSelected)="onRouteSelected($event)">
+    </ng-container>
+
+  }
+}

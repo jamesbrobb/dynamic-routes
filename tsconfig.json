@@ -3,6 +3,14 @@
   "compileOnSave": false,
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
+    "paths": {
+      "@jamesbenrobb/dynamic-routes": [
+        "./dist/libraries/@jamesbenrobb/dynamic-routes"
+      ],
+      "@jamesbenrobb/dynamic-routes-ngx": [
+        "./dist/libraries/@jamesbenrobb/dynamic-routes-ngx"
+      ]
+    },
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
