@@ -1,3 +1,9 @@
 :host {
   display: block;
+
+  .four-oh-four {
+    .default:not(:only-child) {
+      display: none;
+    }
+  }
 }

@@ -4,7 +4,6 @@ import {ComponentLoaderDirective, ComponentLoaderIOBase} from "@jamesbenrobb/ui"
 import {ContentNodeContentType, isContentNode, RouteNode} from "@jamesbenrobb/dynamic-routes";
 
 
-
 export type ContentLoaderComponentIO<T extends ContentNodeContentType> = {
   routeNodes: RouteNode<T>[] | undefined
   currentNode: RouteNode<T> | undefined
