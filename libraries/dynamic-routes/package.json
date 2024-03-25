@@ -1,6 +1,6 @@
 {
   "name": "@jamesbenrobb/dynamic-routes",
-  "version": "0.0.1",
+  "version": "0.0.7",
   "author": "James Robb",
   "description": "Framework agnostic dynamic routing adaptor",
   "repository": {

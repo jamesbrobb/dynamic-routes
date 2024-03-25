@@ -1,6 +1,6 @@
 {
   "name": "@jamesbenrobb/dynamic-routes-ngx",
-  "version": "0.0.1",
+  "version": "0.0.7",
   "author": "James Robb",
   "description": "Angular specific application shell for dynamic routing",
   "repository": {
@@ -16,7 +16,7 @@
     "@jamesbenrobb/styles": "^1.0.11",
     "@jamesbenrobb/types": "^1.0.3",
     "@jamesbenrobb/ui": "^1.0.40",
-    "@jamesbenrobb/dynamic-routes": "^0.0.1",
+    "@jamesbenrobb/dynamic-routes": "^0.0.7",
     "rxjs": "~7.8.0",
     "zone.js": "~0.14.3"
   },
