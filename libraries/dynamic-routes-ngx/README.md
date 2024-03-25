@@ -1,29 +1,42 @@
 # Dynamic Routes Ngx
 <br/>
 
-## What.
+# What.
 
 An Angular implementation of `@jamesbenrobb/dynamic-routes`.
 
-A simple configurable app shell using Angular Material components, for quickly creating applications with dynamic routing. [Demo.](https://dynamic-routes-app-demo.jamesrobb.work/)
+[Demo](https://app-shell.jamesrobb.work/dynamic-routes-demo)
+
+**Note** - Only the highlighted area in *Fig 1.* relates to this library.
+
+The surrounding UI in the demo is part of a separate library ([`@jamesbenrobb/app-shell`](https://github.com/jamesbrobb/app-shell)) and is used in this instance to:
+
+1. Facilitate user route changes
+2. Demonstrate the composable nature of this library
+
+![demo image](images/demo.png)
+*Fig 1. Only the highlighted area relates to this library and is the default content displayed when using the <jbr-dra-app-content-container> component*
+
 <br/><br/>
 
-## Why.
+# Why.
 
-Whilst creating Documentor (which required dynamic/configurable routes) it occurred to me that it may be useful to abstract out the underlying implementation/behaviour to use for other apps. So i did.
+Whilst creating [Documentor](https://github.com/jamesbrobb/documentor) (which required dynamic/configurable routes) it became apparent that it would be useful to abstract and decouple the underlying implementation/behaviour to use in other apps.
 <br/><br/>
 
-## What not.
+# What not.
 
 A replacement for complex routing.
 <br/><br/>
 
-## How.
+# How.
 
 1. [Install](#install)
 2. [Define route config json](#define-route-config-json)
 3. [Add providers](#add-providers)
-5. [Extending for your own use](#extending-for-your-own-use)
+4. [Add component](#add-component)
+5. [Interact with router](#interact-with-router)
+6. [Extending for your own use](#extending-for-your-own-use)
 <br/><br/>
 
 ### Install
@@ -93,11 +106,48 @@ export const appConfig: ApplicationConfig = {
 ```
 <br/>
 
-## Extending for your own use.
+### Add component
+
+```ts
+import { Component } from '@angular/core';
+import {AppContentContainerComponent} from "@jamesbenrobb/dynamic-routes-ngx";
+
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [
+    AppContentContainerComponent
+  ],
+  template: `
+    <jbr-dra-app-content-container>
+    </jbr-dra-app-content-container>
+  `,
+  styleUrl: './app.component.scss'
+})
+export class AppComponent {}
+```
+<br/>
+
+### Interact with router
+
+The `RouteManager` can be injected and exposes the following API:
+
+```ts
+readonly currentRouteNodes$: Observable<RouteNode<T>[]>;
+readonly urlChange$: Observable<string>;
+get routes(): RouteNode<T>[];
+```
+```ts
+navigateByUrl(path: string): void;
+navigateByNode(node: RouteNode<T>): void;
+```
+<br/>
+
+# Extending for your own use.
 
 1. [Provider options](#provider-options)
 2. [Add your own content component](#add-your-own-content-component)
-3. 
 <br/><br/>
  
 ### Provider options
