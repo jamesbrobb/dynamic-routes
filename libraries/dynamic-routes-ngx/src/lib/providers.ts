@@ -4,17 +4,23 @@ import {getContentComponentProviders} from "./components/app-content-loader/app-
 import {getRouteProviders} from "./route";
 
 
-export function getAppProviders<T extends ContentNodeContentType>(
-  configPath: string,
-  appName: string = 'Demo App',
+export type JBRDRAppProvidersOptions<T extends ContentNodeContentType> = {
+  appName?: string,
   getAllChildNodes?: getAllChildNodes<T>
+  contentComponentType?: string
+}
+
+
+export function getJBRDRAppProviders<T extends ContentNodeContentType>(
+  configPath: string,
+  options?: JBRDRAppProvidersOptions<T>
 ): (Provider | EnvironmentProviders)[] {
   return [
     getRouteProviders(
       configPath,
-      appName,
-      getAllChildNodes
+      options?.appName || 'Demo App',
+      options?.getAllChildNodes
     ),
-    getContentComponentProviders() // options?.contentComponentType
+    getContentComponentProviders(options?.contentComponentType)
   ]
 }
